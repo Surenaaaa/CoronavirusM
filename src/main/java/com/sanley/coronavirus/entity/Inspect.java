@@ -6,9 +6,10 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.util.Date;
+
 @NoArgsConstructor
 @Data
-@Accessors(chain=true)
+@Accessors(chain = true)
 public class Inspect implements Serializable {
     private int testId;
     private int baseId;

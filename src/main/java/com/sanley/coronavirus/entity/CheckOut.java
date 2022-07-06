@@ -12,7 +12,7 @@ import java.util.Date;
  */
 @NoArgsConstructor
 @Data
-@Accessors(chain=true)
+@Accessors(chain = true)
 public class CheckOut {
     private int baseId;
     private String name;

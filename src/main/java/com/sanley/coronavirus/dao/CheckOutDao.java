@@ -1,6 +1,7 @@
 package com.sanley.coronavirus.dao;
 
 import com.sanley.coronavirus.entity.CheckOut;
+
 import java.util.List;
 
 import org.apache.ibatis.annotations.*;
@@ -14,6 +15,7 @@ public interface CheckOutDao {
 
     /**
      * 打卡
+     *
      * @param checkOut
      */
     @Insert("insert into checkout(baseId,currentPosition,bodyTemperature,healthState,isToHighArea,isTouch,remarks,name,checkOutDate)values(#{baseId},#{currentPosition},#{bodyTemperature},#{healthState},#{isToHighArea},#{isTouch},#{remarks},#{name},#{checkOutDate})")
@@ -21,6 +23,7 @@ public interface CheckOutDao {
 
     /**
      * 查看打卡记录
+     *
      * @return
      */
     @Select("select currentPosition,bodyTemperature,healthState,isToHighArea,isTouch,remarks,name,checkOutDate from checkout ")

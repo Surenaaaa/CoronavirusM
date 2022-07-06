@@ -22,7 +22,7 @@ public class DashBoardController {
         URL u1 = new URL("https://zaixianke.com/yq/all");
         URLConnection conn = u1.openConnection();
         InputStream is = conn.getInputStream();
-        BufferedReader br = new BufferedReader(new InputStreamReader(is,"UTF-8"));
+        BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
         String text1 = br.readLine();
         br.close();
         return text1;

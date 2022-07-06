@@ -5,9 +5,10 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+
 @NoArgsConstructor
 @Data
-@Accessors(chain=true)
+@Accessors(chain = true)
 public class Manage implements Serializable {
     private String id;
     private String password;

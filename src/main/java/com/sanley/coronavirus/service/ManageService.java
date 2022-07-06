@@ -1,4 +1,5 @@
 package com.sanley.coronavirus.service;
+
 import com.sanley.coronavirus.entity.Manage;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
@@ -8,8 +9,7 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 public interface ManageService {
-     List<Manage> findAll();
-
+    List<Manage> findAll();
 
     public void add(Manage manage);
 
@@ -17,5 +17,5 @@ public interface ManageService {
 
     public void update(Manage manage);
 
-    public Manage find(String id,String password);
+    public Manage find(String id, String password);
 }

@@ -14,9 +14,10 @@ import java.util.List;
 public class PatientServiceImp implements PatientService {
     @Autowired
     PatientDao dao;
+
     @Override
-    public List<Patient> findAll(int page,int size) {
-        PageHelper.startPage(page,size);
+    public List<Patient> findAll(int page, int size) {
+        PageHelper.startPage(page, size);
         return dao.findAll();
     }
 
@@ -32,7 +33,7 @@ public class PatientServiceImp implements PatientService {
 
     @Override
     public List<Patient> findByName(String name) {
-        return dao.findByName("%"+name+"%");
+        return dao.findByName("%" + name + "%");
     }
 
     @Override

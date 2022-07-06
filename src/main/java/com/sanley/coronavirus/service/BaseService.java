@@ -14,7 +14,7 @@ public interface BaseService {
 
     public Base findById(int id);
 
-    public void  delete(int id);
+    public void delete(int id);
 
     public void add(Base base);
 

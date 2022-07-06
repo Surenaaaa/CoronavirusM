@@ -10,7 +10,7 @@ import java.util.List;
 
 @NoArgsConstructor
 @Data
-@Accessors(chain=true)
+@Accessors(chain = true)
 public class Patient implements Serializable {
     private int baseId;
     private String infectionSource;

@@ -17,7 +17,7 @@ public class TouchServiceImp implements TouchService {
 
     @Override
     public List<Touch> findAll(int page, int size) {
-        PageHelper.startPage(page,size);
+        PageHelper.startPage(page, size);
         return dao.findAll();
     }
 
@@ -28,7 +28,7 @@ public class TouchServiceImp implements TouchService {
 
     @Override
     public List<Touch> findByName(String name) {
-        return dao.findByName("%"+name+"%");
+        return dao.findByName("%" + name + "%");
     }
 
     @Override
@@ -44,7 +44,7 @@ public class TouchServiceImp implements TouchService {
     @Override
     public Integer number() {
         Integer i = dao.number();
-        if (i==null){
+        if (i == null) {
             return 0;
         }
         return i;
@@ -53,7 +53,7 @@ public class TouchServiceImp implements TouchService {
     @Override
     public Integer currentNumber() {
         Integer i = dao.currentNumber();
-        if (i==null){
+        if (i == null) {
             return 0;
         }
         return i;

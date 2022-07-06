@@ -4,7 +4,9 @@ import com.github.pagehelper.PageHelper;
 import com.sanley.coronavirus.dao.CheckOutDao;
 import com.sanley.coronavirus.entity.CheckOut;
 import com.sanley.coronavirus.service.CheckOutService;
+
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +27,7 @@ public class CheckOutImpl implements CheckOutService {
 
     @Override
     public List<CheckOut> findAll(int page, int size) {
-        PageHelper.startPage(page,size);
+        PageHelper.startPage(page, size);
         return dao.findAll();
     }
 

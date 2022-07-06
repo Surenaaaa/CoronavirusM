@@ -14,9 +14,9 @@ public interface DeadDao {
     @Results({
             @Result(id = true, property = "baseId", column = "baseId"),
             @Result(property = "deadTime", column = "deadTime"),
-            @Result(property = "patient",column = "baseId",javaType = Patient.class,one = @One(select = "com.sanley.coronavirus.dao.PatientDao.findById")),
-            @Result(property = "base",column = "baseId",javaType = Base.class,one = @One(select = "com.sanley.coronavirus.dao.BaseDao.findById"))
-})
+            @Result(property = "patient", column = "baseId", javaType = Patient.class, one = @One(select = "com.sanley.coronavirus.dao.PatientDao.findById")),
+            @Result(property = "base", column = "baseId", javaType = Base.class, one = @One(select = "com.sanley.coronavirus.dao.BaseDao.findById"))
+    })
     public List<Dead> findAll();
 
     @Insert("insert into dead(baseId,deadTime)values(#{baseId},#{deadTime})")
@@ -26,10 +26,11 @@ public interface DeadDao {
     @Results({
             @Result(id = true, property = "baseId", column = "baseId"),
             @Result(property = "deadTime", column = "deadTime"),
-            @Result(property = "patient",column = "baseId",javaType = Patient.class,one = @One(select = "com.sanley.coronavirus.dao.PatientDao.findById")),
-            @Result(property = "base",column = "baseId",javaType = Base.class,one = @One(select = "com.sanley.coronavirus.dao.BaseDao.findById"))
+            @Result(property = "patient", column = "baseId", javaType = Patient.class, one = @One(select = "com.sanley.coronavirus.dao.PatientDao.findById")),
+            @Result(property = "base", column = "baseId", javaType = Base.class, one = @One(select = "com.sanley.coronavirus.dao.BaseDao.findById"))
     })
     public Dead findById(int baseId);
+
     @Select("select sum(1) from dead")
     public int number();
 
@@ -39,7 +40,7 @@ public interface DeadDao {
     @Results({
             @Result(id = true, property = "baseId", column = "baseId"),
             @Result(property = "deadTime", column = "deadTime"),
-            @Result(property = "patient", column = "baseId", javaType = Patient.class,many = @Many(select = "com.sanley.coronavirus.dao.PatientDao.findById")),
+            @Result(property = "patient", column = "baseId", javaType = Patient.class, many = @Many(select = "com.sanley.coronavirus.dao.PatientDao.findById")),
             @Result(property = "base", column = "baseId", javaType = Base.class, one = @One(select = "com.sanley.coronavirus.dao.BaseDao.findById"))
     })
     //根据姓名查找死者

@@ -8,7 +8,7 @@ import java.util.List;
 
 @NoArgsConstructor
 @Data
-@Accessors(chain=true)
+@Accessors(chain = true)
 public class IndexInfo {
     private int currentPatientNumber;
     private int sumPatientNumber;
@@ -22,7 +22,6 @@ public class IndexInfo {
     private List patientNums;
     private List cureNums;
     private String username;
-
 
 
 }

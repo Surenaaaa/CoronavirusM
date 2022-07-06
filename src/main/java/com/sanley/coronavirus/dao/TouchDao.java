@@ -15,10 +15,11 @@ public interface TouchDao {
             @Result(property = "isoAddress", column = "isoAddress"),
             @Result(property = "startDate", column = "startDate"),
             @Result(property = "finished", column = "finished"),
-            @Result(property = "base",column = "baseId",javaType = Base.class,one = @One(select = "com.sanley.coronavirus.dao.BaseDao.findById"))
+            @Result(property = "base", column = "baseId", javaType = Base.class, one = @One(select = "com.sanley.coronavirus.dao.BaseDao.findById"))
     })
     //查看所有接触案例
     public List<Touch> findAll();
+
     //添加接触信息
     @Insert("insert into touch(baseId,comeFrom,isoAddress,startDate,finished)values(#{baseId},#{comeFrom},#{isoAddress},#{startDate},#{finished})")
     public void add(Touch touch);
@@ -30,7 +31,7 @@ public interface TouchDao {
             @Result(property = "isoAddress", column = "isoAddress"),
             @Result(property = "startDate", column = "startDate"),
             @Result(property = "finished", column = "finished"),
-            @Result(property = "base",column = "baseId",javaType = Base.class,one = @One(select = "com.sanley.coronavirus.dao.BaseDao.findById"))
+            @Result(property = "base", column = "baseId", javaType = Base.class, one = @One(select = "com.sanley.coronavirus.dao.BaseDao.findById"))
     })
     //通过id查找密切接触者
     public Touch findById(int baseId);
@@ -51,9 +52,11 @@ public interface TouchDao {
     //将此接触者隔离状态完成
     @Update("update touch set finished='是' where baseId=#{baseId}")
     public void toSafe(int baseId);
+
     //现存隔离人数
     @Select("select sum(1) from touch where finished ='否' ")
     public Integer currentNumber();
+
     //累计隔离人数
     @Select("select sum(1) from touch  ")
     public Integer number();

@@ -12,8 +12,10 @@ public interface BaseDao {
     //，
     @Select("select id,idCard,name,age,gender,address,phone from base where id =#{id}")
     public Base findById(int id);
+
     @Delete("delete from base where id=#{id}")
-    public void  delete(int id);
+    public void delete(int id);
+
     @Insert("insert into base(idCard,name,age,gender,address,phone ) values(#{idCard},#{name},#{age},#{gender},#{address},#{phone})")
     public void add(Base base);
 

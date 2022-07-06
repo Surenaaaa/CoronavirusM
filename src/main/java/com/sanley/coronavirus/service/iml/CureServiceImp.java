@@ -15,17 +15,17 @@ import java.util.Map;
 public class CureServiceImp implements CureService {
     @Autowired
     CureDao dao;
+
     @Override
     public void add(Cure cure) {
         dao.add(cure);
     }
 
     @Override
-    public List<Cure> findAll(int page,int size) {
-        PageHelper.startPage(page,size);
+    public List<Cure> findAll(int page, int size) {
+        PageHelper.startPage(page, size);
         return dao.findAll();
     }
-
 
     @Override
     public Cure get(int id) {
@@ -37,7 +37,7 @@ public class CureServiceImp implements CureService {
 
     @Override
     public void update(int baseId, String current) {
-        dao.update(baseId,current);
+        dao.update(baseId, current);
     }
 
     @Override
@@ -46,7 +46,7 @@ public class CureServiceImp implements CureService {
     }
 
     @Override
-    public List<Map<Integer,Date>> group() {
+    public List<Map<Integer, Date>> group() {
         return dao.group();
     }
 

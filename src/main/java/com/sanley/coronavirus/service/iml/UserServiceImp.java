@@ -31,7 +31,7 @@ public class UserServiceImp implements UserService {
 
     @Override
     public List<User> findAll(int page, int size) {
-        PageHelper.startPage(page,size);
+        PageHelper.startPage(page, size);
         return dao.findAll();
     }
 

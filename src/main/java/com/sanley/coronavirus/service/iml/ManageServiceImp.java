@@ -12,6 +12,7 @@ import java.util.List;
 public class ManageServiceImp implements ManageService {
     @Autowired
     ManageDao dao;
+
     @Override
     public List<Manage> findAll() {
         return dao.findAll();
@@ -34,6 +35,6 @@ public class ManageServiceImp implements ManageService {
 
     @Override
     public Manage find(String id, String password) {
-        return dao.find(id,password);
+        return dao.find(id, password);
     }
 }

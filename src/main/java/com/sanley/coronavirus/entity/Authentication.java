@@ -6,7 +6,7 @@ import lombok.experimental.Accessors;
 
 @NoArgsConstructor
 @Data
-@Accessors(chain=true)
+@Accessors(chain = true)
 public class Authentication {
     private int id;
     private String description;

@@ -7,12 +7,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.sql.Date;
+
 @NoArgsConstructor
 @Data
-@Accessors(chain=true)
+@Accessors(chain = true)
 public class Dead implements Serializable {
     private int baseId;
-    @DateTimeFormat(pattern="YYYY-MM-dd")
+    @DateTimeFormat(pattern = "YYYY-MM-dd")
     private Date deadTime;
     private Base base;
     private Patient patient;

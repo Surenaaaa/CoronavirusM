@@ -19,7 +19,6 @@ public class CoronavirusApplication extends WebMvcConfigurationSupport {
 
     }
 
-
     @Override
     protected void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**").addResourceLocations(ResourceUtils.CLASSPATH_URL_PREFIX + "/static/");

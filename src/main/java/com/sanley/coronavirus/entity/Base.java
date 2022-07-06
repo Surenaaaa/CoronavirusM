@@ -9,7 +9,7 @@ import java.math.BigInteger;
 
 @NoArgsConstructor
 @Data
-@Accessors(chain=true)
+@Accessors(chain = true)
 public class Base implements Serializable {
     private int id;
     private String idCard;

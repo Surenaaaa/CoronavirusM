@@ -9,7 +9,7 @@ import java.util.List;
 
 @NoArgsConstructor
 @Data
-@Accessors(chain=true)
+@Accessors(chain = true)
 public class User {
     private int id;
     private String name;
@@ -19,11 +19,11 @@ public class User {
     private BigInteger phone;
     private String unit;
 
-    public boolean isAdmin(){
-        boolean flag=false;
-        for (Authentication authentication:authenticationList){
-            if ("Admin".equals(authentication.getName())){
-                flag=true;
+    public boolean isAdmin() {
+        boolean flag = false;
+        for (Authentication authentication : authenticationList) {
+            if ("Admin".equals(authentication.getName())) {
+                flag = true;
             }
 
         }

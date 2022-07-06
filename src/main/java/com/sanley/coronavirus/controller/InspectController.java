@@ -14,16 +14,15 @@ public class InspectController {
     @Autowired
     InspectService service;
 
-    @RequestMapping(value = "/inspect/get/{id}",method = RequestMethod.GET)
-    public List<Inspect> get(@PathVariable("id")int id){
+    @RequestMapping(value = "/inspect/get/{id}", method = RequestMethod.GET)
+    public List<Inspect> get(@PathVariable("id") int id) {
 
         return service.find(id);
     }
 
-    @RequestMapping(value="/inspect/add",method=RequestMethod.POST)
-    public void add(@RequestBody Inspect Inspect)
-    {
-         service.add(Inspect);
+    @RequestMapping(value = "/inspect/add", method = RequestMethod.POST)
+    public void add(@RequestBody Inspect Inspect) {
+        service.add(Inspect);
     }
 
 }

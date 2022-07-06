@@ -16,8 +16,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
-public class  MyUserDetailService implements UserDetailsService {
+public class MyUserDetailService implements UserDetailsService {
     @Autowired
     private UserDao userDao;
 
@@ -25,16 +26,16 @@ public class  MyUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
         User user = userDao.findByUsername(s);
-        if(user == null){
+        if (user == null) {
             throw new UsernameNotFoundException(s);
         }
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
         List<Authentication> authentications = user.getAuthenticationList();
-        for(Authentication authentication:authentications){
-            authorities.add(new SimpleGrantedAuthority("ROLE_" +authentication.getName()));
+        for (Authentication authentication : authentications) {
+            authorities.add(new SimpleGrantedAuthority("ROLE_" + authentication.getName()));
         }
         System.out.println(authorities);
-        org.springframework.security.core.userdetails.User user1=new org.springframework.security.core.userdetails.User(user.getUsername(),user.getPassword(),authorities);
+        org.springframework.security.core.userdetails.User user1 = new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);
         return user1;
     }
 }

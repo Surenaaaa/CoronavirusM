@@ -9,7 +9,7 @@ import java.sql.Date;
 
 @NoArgsConstructor
 @Data
-@Accessors(chain=true)
+@Accessors(chain = true)
 public class Cure implements Serializable {
     private int baseId;
     private Date dischargeDate;

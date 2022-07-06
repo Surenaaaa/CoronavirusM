@@ -38,8 +38,8 @@ public class CheckOutController {
     //打卡
     @RequestMapping(value = "/checkOut/add", method = RequestMethod.POST)
     public String addCheckOut(@RequestParam("currentPosition") String currentPosition, @RequestParam("bodyTemperature") Double bodyTemperature,
-                             @RequestParam("healthState") String healthState, @RequestParam("isToHighArea") String isToHighArea,
-                             @RequestParam("isTouch") String isTouch, @RequestParam("remarks") String remarks,
+                              @RequestParam("healthState") String healthState, @RequestParam("isToHighArea") String isToHighArea,
+                              @RequestParam("isTouch") String isTouch, @RequestParam("remarks") String remarks,
                               @RequestParam("name") String name, @RequestParam("checkOutDate") Date checkOutDate) {
         CheckOut checkOut = new CheckOut().setCurrentPosition(currentPosition).setBodyTemperature(bodyTemperature)
                 .setHealthState(healthState).setIsToHighArea(isToHighArea).setIsTouch(isTouch)
@@ -51,15 +51,15 @@ public class CheckOutController {
     @InitBinder
     public void initBinder(WebDataBinder binder, WebRequest request) {
         //转换日期 注意这里的转化要和传进来的字符串的格式一直 如2015-9-9 就应该为yyyy-MM-dd
-        DateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));// CustomDateEditor为自定义日期编辑器
     }
 
     @RequestMapping(value = "/checkOut/list", method = RequestMethod.GET)
-    public String list(Model model, @RequestParam(name="page",required = true,defaultValue = "1")int page, @RequestParam(name="size",required=true,defaultValue = "25")int size){
-        java.util.List<CheckOut> checkOuts = checkOutService.findAll(page,size);
-        PageInfo<User> pageInfo=new PageInfo(checkOuts);
-        model.addAttribute("pageInfo",pageInfo);
+    public String list(Model model, @RequestParam(name = "page", required = true, defaultValue = "1") int page, @RequestParam(name = "size", required = true, defaultValue = "25") int size) {
+        java.util.List<CheckOut> checkOuts = checkOutService.findAll(page, size);
+        PageInfo<User> pageInfo = new PageInfo(checkOuts);
+        model.addAttribute("pageInfo", pageInfo);
         return "checkOutList";
     }
 
